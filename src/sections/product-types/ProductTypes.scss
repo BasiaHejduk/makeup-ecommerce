@@ -1,0 +1,67 @@
+@import "../../common/constants.scss";
+
+.types {
+    padding: 10px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 30vh);
+
+    @media (min-width: $tablet) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 35vh);
+    }
+
+    &__img {
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        // &::after {
+        //     content: "";
+        //     height: 100%;
+        //     width: 100%;
+        //     background-color: rgba(0,0,0,0.5);
+        //     position: absolute;
+        //     visibility: hidden;
+
+        //     &:hover {
+        //         visibility: visible;
+        //     }
+        // }
+
+        &--1 {
+            background-image: url(../../assets/blush.jpeg);
+        }
+        &--2 {
+            background-image: url(../../assets/bronzer.jpeg);
+        }
+        &--3 {
+            background-image: url(../../assets/eyebrow.jpeg);
+        }
+        &--4 {
+            background-image: url(../../assets/eyeliner.jpeg);
+        }
+        &--5 {
+            background-image: url(../../assets/eyeshadow.jpeg);
+        }
+        &--6 {
+            background-image: url(../../assets/foundation.jpeg);
+        }
+        &--7 {
+            background-image: url(../../assets/lip_liner.jpeg);
+        }
+        &--8 {
+            background-image: url(../../assets/lipstick.jpeg);
+        }
+        &--9 {
+            background-image: url(../../assets/mascara.jpeg);
+        }
+        &--10 {
+            background-image: url(../../assets/nail_polish.jpeg);
+        }
+    }
+}

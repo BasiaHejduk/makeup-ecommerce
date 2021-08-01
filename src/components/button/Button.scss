@@ -1,0 +1,16 @@
+@import '../../common/constants.scss';
+
+.button {
+    padding: 10px;
+    background-color: $main-color;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    @media (min-width: $mobile) {
+        font-size: 18px;
+    }
+    &:hover {
+        box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    }
+}

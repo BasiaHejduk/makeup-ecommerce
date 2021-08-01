@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
+$main-font: "Roboto", sans-serif;
+$logo-font: "Dancing Script", cursive;
+
+$mobile: 640px;
+$tablet: 1022px;
+$desktop: 1200px;
+
+$main-color: rgb(246,168,156);
+$border-color: rgb(222, 171, 162);
+$white-color: rgb(255, 255, 255);
+$grey-color: rgb(212, 212, 212);
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 600px;
+    @media (min-width: $mobile) and (max-width:$tablet) {
+        max-width: 900px;
+    }
+    @media (min-width: $tablet) {
+        max-width: 1100px;
+    }
+}

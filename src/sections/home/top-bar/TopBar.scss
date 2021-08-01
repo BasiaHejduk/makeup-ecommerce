@@ -1,0 +1,81 @@
+@import "../../../common/constants.scss";
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo-icon {
+        width: 40px;
+        height: 40px;
+        background-image: url(../../../assets/logo.png);
+        background-size: cover;
+        @media (min-width: $mobile) {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__logo-text {
+        text-align: center;
+        font-family: $logo-font;
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 5px;
+        @media (min-width: $mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__hamburger {
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @media (min-width: $mobile) {
+            display: none;
+        }
+
+    }
+
+    &__hamburger-item {
+        width: 35px;
+        height: 2px;
+        background-color: black;
+    }
+
+    &__login {
+        width: 40px;
+        height: 40px;
+        background-image: url(../../../assets/cart.png);
+        background-size: cover;
+        margin-left: 10px;
+        @media (min-width: $mobile) {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    &__cart-icon {
+        width: 40px;
+        height: 40px;
+        background-image: url(../../../assets/cart.png);
+        background-size: cover;
+        margin-left: 10px;
+        @media (min-width: $mobile) {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+}

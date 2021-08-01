@@ -1,0 +1,9 @@
+@import "../../../common/constants.scss";
+
+.header {
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    padding: 10px;
+    z-index: 2;
+}
