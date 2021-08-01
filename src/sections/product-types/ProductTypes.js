@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Button from '../../components/button/Button';
 import './ProductTypes.scss';
 
@@ -5,34 +6,34 @@ const ProductTypes = () => {
     return (
         <div className="types wrapper">
             <div className="types__img types__img--1">
-                <Button text="BLUSH"/>
+                <Link to="/shop"><Button text="BLUSH"/></Link>
             </div>
             <div className="types__img types__img--2">
-                <Button text="BRONZER"/>
+                <Link to="/shop"><Button text="BRONZER"/></Link>
             </div>
             <div className="types__img types__img--3">
-                <Button text="EYEBROW"/>
+                <Link to="/shop"><Button text="EYEBROW"/></Link>
             </div>
             <div className="types__img types__img--4">
-                <Button text="EYELINER"/>
+                <Link to="/shop"><Button text="EYELINER"/></Link>
             </div>
             <div className="types__img types__img--5">
-                <Button text="EYESHADOW"/>
+                <Link to="/shop"><Button text="EYESHADOW"/></Link>
             </div>
             <div className="types__img types__img--6">
-                <Button text="FOUNDATION"/>
+                <Link to="/shop"><Button text="FOUNDATION"/></Link>
             </div>
             <div className="types__img types__img--7">
-                <Button text="LIP LINER"/>
+                <Link to="/shop"><Button text="LIP LINER"/></Link>
             </div>
             <div className="types__img types__img--8">
-                <Button text="LIPSTICK"/>
+                <Link to="/shop"><Button text="LIPSTICK"/></Link>
             </div>
             <div className="types__img types__img--9">
-                <Button text="MASCARA"/>
+                <Link to="/shop"><Button text="MASCARA"/></Link>
             </div>
             <div className="types__img types__img--10">
-                <Button text="NAIL POLISH"/>
+                <Link to="/shop"><Button text="NAIL POLISH"/></Link>
             </div>
         </div>
     )

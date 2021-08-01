@@ -1,16 +1,17 @@
 import './App.scss';
-import Footer from './sections/footer/Footer';
-import Home from './sections/home/Home';
-import Newsletter from './sections/newsletter/Newsletter';
-import ProductTypes from './sections/product-types/ProductTypes';
+import MainPage from './pages/MainPage';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ShopPage from './pages/ShopPage';
 
 const App = () => {
   return (
     <div className="App">
-      <Home/>
-      <ProductTypes/>
-      <Newsletter/>
-      <Footer/>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={MainPage}/>
+          <Route path="/shop" component={ShopPage}/>
+        </Switch>
+      </Router>
     </div>
   )
 }

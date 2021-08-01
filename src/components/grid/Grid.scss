@@ -1,0 +1,21 @@
+@import '../../common/constants.scss';
+
+.grid {
+    padding: 10px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    @media (min-width: $tablet) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__item {
+        height: 30vh;
+        width: 100%;
+        background-color: blanchedalmond;
+
+    @media (min-width: $mobile) {
+        height: 40vh;
+    }
+    }
+}
