@@ -1,15 +1,16 @@
-import { source } from "../common/helpers";
 import Grid from "../components/grid/Grid"
 import ShopTitle from "../components/shop-title/ShopTitle";
 import Header from "../sections/home/header/Header"
+import { useParams } from "react-router-dom";
 
-
-const ShopPage = ({type}) => {
+const ShopPage = () => {
+    window.scrollTo(0, 0);
+    let { cosmetic } = useParams();
     return (
         <>
             <Header/>
-            <ShopTitle title={source.fromWhere}/>
-            <Grid/>
+            <ShopTitle title={cosmetic}/>
+            <Grid type={cosmetic}/>
         </>
     )
 };

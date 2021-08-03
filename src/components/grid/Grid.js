@@ -1,48 +1,46 @@
 import { useEffect, useState } from 'react';
 import './Grid.scss';
-import { API_URL, source } from '../../common/helpers';
+import { API_URL } from '../../common/helpers';
 
-const Grid = () => {
+const Grid = ({type}) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
 
         let linkToFetch = "";
-        if (source.fromWhere === "ALL") {
+        if (type === "all") {
             linkToFetch = API_URL;
-        } else if (source.fromWhere === "BRONZER") {
+        } else if (type === "bronzer") {
             linkToFetch = `${API_URL}?product_type=bronzer`;
-        } else if (source.fromWhere === "BLUSH") {
+        } else if (type === "blush") {
             linkToFetch = `${API_URL}?product_type=blush`;
-        } else if (source.fromWhere === "EYEBROW") {
+        } else if (type === "eyebrow") {
             linkToFetch = `${API_URL}?product_type=eyebrow`;
-        } else if (source.fromWhere === "EYELINER") {
+        } else if (type === "eyeliner") {
             linkToFetch = `${API_URL}?product_type=eyeliner`;
-        } else if (source.fromWhere === "EYESHADOW") {
+        } else if (type === "eyeshadow") {
             linkToFetch = `${API_URL}?product_type=eyeshadow`;
-        } else if (source.fromWhere === "FOUNDATION") {
+        } else if (type === "foundation") {
             linkToFetch = `${API_URL}?product_type=foundation`;
-        } else if (source.fromWhere === "LIP LINER") {
+        } else if (type === "lip liner") {
             linkToFetch = `${API_URL}?product_type=lip liner`;
-        } else if (source.fromWhere === "LIPSTICK") {
+        } else if (type === "lipstick") {
             linkToFetch = `${API_URL}?product_type=lipstick`;
-        } else if (source.fromWhere === "MASCARA") {
+        } else if (type === "mascara") {
             linkToFetch = `${API_URL}?product_type=mascara`;
-        } else if (source.fromWhere === "NAIL POLISH") {
+        } else if (type === "nail polish") {
             linkToFetch = `${API_URL}?product_type=nail polish`;
         } 
-
         fetch(linkToFetch)
         .then((response) => response.json())
         .then((data) => setProducts(data))
         .catch((err) => console.log(err));
 
-    }, []);
+    }, [type]);
 
     return (
         <div className="wrapper">
         <div className="grid">
-
             {
                 products.map((product) => {
                     return <div key={product.id} className="grid__item">

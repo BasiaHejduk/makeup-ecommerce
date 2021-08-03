@@ -5,6 +5,7 @@ import ProductTypes from "../sections/product-types/ProductTypes"
 
 
 const MainPage = () => {
+    window.scrollTo(0, 0);
     return(
         <>
             <Home/>

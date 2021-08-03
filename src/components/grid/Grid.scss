@@ -22,6 +22,9 @@
         @media (min-width: $mobile) {
         height: 60vh;
         }
+        &:hover {
+            box-shadow: 8px 8px 27px -6px rgba(122, 124, 145, 1);
+        }
     }
 
     &__cart-button {
