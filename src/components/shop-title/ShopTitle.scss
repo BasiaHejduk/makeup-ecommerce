@@ -14,7 +14,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        @media (min-width: $tablet) {
+        @media (min-width: $mobile) {
             height: 150px;
         }
     }
@@ -23,7 +23,7 @@
         color: $white-color;
         font-size: 20px;
         font-weight: 500;
-        @media (min-width: $tablet) {
+        @media (min-width: $mobile) {
             font-size: 24px;
         }
     }

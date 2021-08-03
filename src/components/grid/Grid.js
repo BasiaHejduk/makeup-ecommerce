@@ -46,7 +46,11 @@ const Grid = () => {
             {
                 products.map((product) => {
                     return <div key={product.id} className="grid__item">
+                        <div className="grid__cart-button"></div>
                         <img className="grid__img" src={product.image_link} alt=""></img>
+                        <p className="grid__brand">Brand: {product.brand}</p>
+                        <p className="grid__name">{product.name}</p>
+                        <p className="grid__price">{product.price} {product.price_sign}</p>
                     </div>
                 })
             }
