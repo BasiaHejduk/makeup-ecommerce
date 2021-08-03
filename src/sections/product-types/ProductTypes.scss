@@ -20,24 +20,15 @@
         justify-content: center;
         position: relative;
 
-        // &::after {
-        //     content: "";
-        //     height: 100%;
-        //     width: 100%;
-        //     background-color: rgba(0,0,0,0.5);
-        //     position: absolute;
-        //     visibility: hidden;
-
-        //     &:hover {
-        //         visibility: visible;
-        //     }
-        // }
+        &:hover {
+            filter: brightness(80%);
+        }
 
         &--1 {
-            background-image: url(../../assets/blush.jpeg);
+            background-image: url(../../assets/bronzer.jpeg);
         }
         &--2 {
-            background-image: url(../../assets/bronzer.jpeg);
+            background-image: url(../../assets/blush.jpeg);
         }
         &--3 {
             background-image: url(../../assets/eyebrow.jpeg);

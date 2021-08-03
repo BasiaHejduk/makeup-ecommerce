@@ -1,10 +1,10 @@
 import './ShopTitle.scss';
 
-const ShopTitle = () => {
+const ShopTitle = ({title}) => {
     return (
         <div className="shop-title wrapper">
             <div className="shop-title__background">
-                <p className="shop-title__text">TEXT</p>
+                <p className="shop-title__text">{title}</p>
             </div>
         </div>
     )

@@ -14,8 +14,13 @@
         width: 100%;
         background-color: blanchedalmond;
 
-    @media (min-width: $mobile) {
+        @media (min-width: $mobile) {
         height: 40vh;
+        }
     }
+
+    &__img {
+        height: 100%;
+        width: 100%;
     }
 }
