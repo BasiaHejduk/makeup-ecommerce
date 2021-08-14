@@ -1,7 +1,7 @@
-import './App.scss';
-import MainPage from './pages/MainPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import MainPage from './pages/MainPage';
 import ShopPage from './pages/ShopPage';
+import './App.scss';
 
 const App = () => {
   return (
