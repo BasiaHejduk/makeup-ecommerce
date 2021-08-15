@@ -9,9 +9,11 @@
         grid-template-columns: repeat(4, 1fr);
     }
 
-    &__loading {
+    &__no-products {
+        height: 60vh;
         font-size: 24px;
         text-align: center;
+        padding: 100px 0;
     }
 
     &__paragraph {

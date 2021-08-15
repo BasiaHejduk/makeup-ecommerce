@@ -3,6 +3,7 @@ import './Fetch.scss';
 import { API_URL } from '../../common/helpers';
 import {brands} from '../../common/Brands';
 import ScrollUpButton from '../scroll-up-button/ScrollUpButton';
+import Loader from '../loader/Loader';
 // import Pagination from '../pagination/Pagination';
 
 const Fetch = ({type}) => {
@@ -59,12 +60,11 @@ const Fetch = ({type}) => {
     let elementToRender;
 
     if (loading) {
-        elementToRender = <div className="fetch__loading">Loading data...</div>
+        elementToRender = <Loader/>
     } 
     if (products.length === 0 && !loading) {
         elementToRender = (
             <div className="wrapper">
-                <div className="fetch__loading">NO PRODUCTS</div>
                 <p className="fetch__paragraph">SELECT BRAND:</p>
                 <select className="fetch__select" name="brands"
                         value={brand} onChange={e=> setBrand(e.target.value)}>
@@ -73,6 +73,7 @@ const Fetch = ({type}) => {
                         return <option key={brand.id} value={brand.name}>{brand.name}</option>
                     })}
                 </select>
+                <div className="fetch__no-products">NO PRODUCTS</div>
             </div>        
         )
     }
