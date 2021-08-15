@@ -1,17 +1,15 @@
 import { useEffect, useState } from 'react';
-import './Fetch.scss';
+import { Link } from 'react-router-dom';
 import { API_URL } from '../../common/helpers';
 import {brands} from '../../common/Brands';
 import ScrollUpButton from '../scroll-up-button/ScrollUpButton';
 import Loader from '../loader/Loader';
-// import Pagination from '../pagination/Pagination';
+import './Fetch.scss';
 
 const Fetch = ({type}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [brand, setBrand] = useState("");
-    // const [currentPage, setCurrentPage]  = useState(1);
-    // const [productsPerPage] = useState(20);
 
     useEffect(() => {
 
@@ -52,11 +50,6 @@ const Fetch = ({type}) => {
 
     }, [type, brand]);
 
-    // const indexOfLastProduct = currentPage * productsPerPage;
-    // const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    // const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-    // const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
     let elementToRender;
 
     if (loading) {
@@ -91,13 +84,17 @@ const Fetch = ({type}) => {
                 <div className="fetch">
                     {
                         products.map((product) => {
-                            return <div key={product.id} className="fetch__item">
-                                <button className="fetch__cart-button"></button>
-                                <img className="fetch__img" src={product.image_link} alt=""></img>
-                                <p className="fetch__brand">Brand: {product.brand}</p>
-                                <p className="fetch__name">{product.name}</p>
-                                <p className="fetch__price">{product.price} {product.price_sign}</p>
-                            </div>
+                            return (
+                                <Link to="/product" key={product.id}>
+                                    <div className="fetch__item">
+                                        <button className="fetch__cart-button"></button>
+                                        <img className="fetch__img" src={product.image_link} alt=""></img>
+                                        <p className="fetch__brand">Brand: {product.brand}</p>
+                                        <p className="fetch__name">{product.name}</p>
+                                        <p className="fetch__price">{product.price} {product.price_sign}</p>
+                                    </div>
+                                </Link>
+                            )
                         })
                     }
                 </div>

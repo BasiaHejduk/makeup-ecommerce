@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import ShopPage from './pages/ShopPage';
 import './App.scss';
+import ProductPage from './pages/ProductPage';
 
 const App = () => {
   return (
@@ -9,7 +10,8 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/" exact component={MainPage}/>
-          <Route path="/shop/:cosmetic?" component={ShopPage}/>
+          <Route path="/shop/:type?" component={ShopPage}/>
+          <Route path="/product" component={ProductPage}/>
         </Switch>
       </Router>
     </div>
