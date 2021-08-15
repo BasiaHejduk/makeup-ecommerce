@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './ProductInfo.scss';
 
-const ProductInfo = () => {
+const ProductInfo = ({url}) => {
     const [product, setProduct] = useState("");
 
     useEffect(() => {
@@ -9,7 +9,7 @@ const ProductInfo = () => {
             .then((response) => response.json())
             .then((data) => setProduct(data))
             .catch((err) => console.log(err));
-    }, []);
+    }, [url]);
 
     return (
         <div className="wrapper">

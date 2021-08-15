@@ -85,21 +85,22 @@ const Fetch = ({type}) => {
                     {
                         products.map((product) => {
                             return (
-                                <Link to="/product" key={product.id}>
-                                    <div className="fetch__item">
+
+                                    <div className="fetch__item" key={product.id}>
                                         <button className="fetch__cart-button"></button>
                                         <img className="fetch__img" src={product.image_link} alt=""></img>
-                                        <p className="fetch__brand">Brand: {product.brand}</p>
-                                        <p className="fetch__name">{product.name}</p>
-                                        <p className="fetch__price">{product.price} {product.price_sign}</p>
+                                        <Link to="/product"  className="fetch__link" url={product.product_api_url}>
+                                            <p className="fetch__brand">Brand: {product.brand}</p>
+                                            <p className="fetch__name">{product.name}</p>
+                                            <p className="fetch__price">{product.price} {product.price_sign}</p>
+                                        </Link>
                                     </div>
-                                </Link>
+
                             )
                         })
                     }
                 </div>
                 <ScrollUpButton/>
-                {/* <Pagination productsPerPage={productsPerPage} totalProducts={products.length} paginate={paginate}/> */}
             </div>
         )
     }
