@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './Fetch.scss';
 import { API_URL } from '../../common/helpers';
 import {brands} from '../../common/Brands';
+import ScrollUpButton from '../scroll-up-button/ScrollUpButton';
 // import Pagination from '../pagination/Pagination';
 
 const Fetch = ({type}) => {
@@ -99,6 +100,7 @@ const Fetch = ({type}) => {
                         })
                     }
                 </div>
+                <ScrollUpButton/>
                 {/* <Pagination productsPerPage={productsPerPage} totalProducts={products.length} paginate={paginate}/> */}
             </div>
         )

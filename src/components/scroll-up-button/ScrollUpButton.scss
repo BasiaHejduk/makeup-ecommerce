@@ -1,0 +1,26 @@
+@import '../../common/constants.scss';
+
+.scroll-up-button {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $main-color;
+    background-image: url(../../assets/chevron-up.svg);
+    background-size: 70%;
+    background-position: center;
+    position: fixed;
+    bottom: 10px;
+    left: calc(50% - 20px);
+    z-index: 2;
+    cursor: pointer;
+    @media (min-width: $mobile) {
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        left: calc(50% - 30px);
+    }
+    &:hover {
+        box-shadow: 8px 8px 27px -6px rgba(122, 124, 145, 1);
+    }
+}
