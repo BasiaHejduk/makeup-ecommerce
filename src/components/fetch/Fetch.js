@@ -85,16 +85,15 @@ const Fetch = ({type}) => {
                     {
                         products.map((product) => {
                             return (
-
-                                    <div className="fetch__item" key={product.id}>
-                                        <button className="fetch__cart-button"></button>
-                                        <img className="fetch__img" src={product.image_link} alt=""></img>
-                                        <Link to="/product"  className="fetch__link" url={product.product_api_url}>
-                                            <p className="fetch__brand">Brand: {product.brand}</p>
-                                            <p className="fetch__name">{product.name}</p>
-                                            <p className="fetch__price">{product.price} {product.price_sign}</p>
-                                        </Link>
-                                    </div>
+                                    <Link to="/product"  className="fetch__link" key={product.id} url={product.product_api_url}>
+                                        <div className="fetch__item">
+                                            <button className="fetch__cart-button"></button>
+                                            <img className="fetch__img" src={product.image_link} alt=""></img>
+                                                <p className="fetch__brand">Brand: {product.brand}</p>
+                                                <p className="fetch__name">{product.name}</p>
+                                                <p className="fetch__price">{product.price} {product.price_sign}</p>
+                                        </div>
+                                    </Link>
 
                             )
                         })
