@@ -24,7 +24,7 @@ const TopBar = () => {
                     <div className="top-bar__hamburger-item"></div>
                 </div>
                 {/* <div className="top-bar__login"></div> */}
-                <div className="top-bar__cart-icon"></div>
+                <Link to="/under-construction"><div className="top-bar__cart-icon"></div></Link>
             </div>
         </div>
         {mobileMenu ? <MobileMenu toggleMobileMenu={toggleMobileMenu}/> : <></>}

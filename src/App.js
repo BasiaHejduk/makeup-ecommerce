@@ -3,6 +3,7 @@ import MainPage from './pages/MainPage';
 import ShopPage from './pages/ShopPage';
 import './App.scss';
 import ProductPage from './pages/ProductPage';
+import UnderConstructionPage from './pages/UnderConstructionPage';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path="/" exact component={MainPage}/>
           <Route path="/shop/:type?" component={ShopPage}/>
           <Route path="/product/:id?" component={ProductPage}/>
+          <Route path="/under-construction" component={UnderConstructionPage}/>
         </Switch>
       </Router>
     </div>
