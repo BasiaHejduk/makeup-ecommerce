@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import './ProductInfo.scss';
 
-const ProductInfo = ({url}) => {
+const ProductInfo = ({id}) => {
     const [product, setProduct] = useState("");
 
     useEffect(() => {
-        fetch("https://makeup-api.herokuapp.com/api/v1/products/139.json")
+        fetch(`https://makeup-api.herokuapp.com/api/v1/products/${id}.json`)
             .then((response) => response.json())
             .then((data) => setProduct(data))
             .catch((err) => console.log(err));
-    }, [url]);
+    }, [id]);
 
     return (
         <div className="wrapper">
