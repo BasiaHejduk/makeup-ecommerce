@@ -7,11 +7,13 @@ import './ProductInfo.scss';
 const ProductInfo = ({id}) => {
     const [product, setProduct] = useState("");
     const [modal, setModal] = useState(false);
+    const [modalImg, setModalImg] = useState("");
     const dispatch = useDispatch();
 
     const handleAddProduct = (img, brand, name, price) => {
         dispatch(addToCart({ img, brand, name, price: `${price}$` }));
         setModal(true);
+        setModalImg(img);
     };
 
     const closeModal = () => {
@@ -50,7 +52,7 @@ const ProductInfo = ({id}) => {
                 </div>
             </div>
         </div>
-        {modal ? <Modal closeModal={closeModal}/> : null}
+        {modal ? <Modal closeModal={closeModal} modalImg={modalImg}/> : null}
         </>
     )
 };
