@@ -41,7 +41,7 @@ const Cart = () => {
                             <Link to="/under-construction">
                                 <button className="cart__button cart__button--checkout">GO TO CHECKOUT</button>
                             </Link>
-                            <Link to="/shop/all">
+                            <Link to="/">
                                 <button className="cart__button cart__button--shop">CONTINUE SHOPPING</button>
                             </Link>
                         </div>
