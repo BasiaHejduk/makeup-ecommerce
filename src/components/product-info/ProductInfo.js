@@ -1,14 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store';
+import Modal from '../modal/Modal';
 import './ProductInfo.scss';
 
 const ProductInfo = ({id}) => {
     const [product, setProduct] = useState("");
+    const [modal, setModal] = useState(false);
     const dispatch = useDispatch();
 
     const handleAddProduct = (img, brand, name, price) => {
         dispatch(addToCart({ img, brand, name, price: `${price}$` }));
+        setModal(true);
+    };
+
+    const closeModal = () => {
+        setModal(false);
     };
 
     useEffect(() => {
@@ -19,6 +26,7 @@ const ProductInfo = ({id}) => {
     }, [id]);
 
     return (
+        <>
         <div className="wrapper">
             <div className="product">
                 <div className="product__img-wrapper">
@@ -42,6 +50,8 @@ const ProductInfo = ({id}) => {
                 </div>
             </div>
         </div>
+        {modal ? <Modal closeModal={closeModal}/> : null}
+        </>
     )
 };
 

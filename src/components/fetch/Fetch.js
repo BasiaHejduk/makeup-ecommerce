@@ -7,16 +7,25 @@ import ScrollUpButton from '../scroll-up-button/ScrollUpButton';
 import Loader from '../loader/Loader';
 import { addToCart } from '../../store';
 import './Fetch.scss';
+import Modal from '../modal/Modal';
 
 
 const Fetch = ({type}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [brand, setBrand] = useState("");
+    const [modal, setModal] = useState(false);
+    const [modalImg, setModalImg] = useState("");
     const dispatch = useDispatch();
 
     const handleAddProduct = (img, brand, name, price) => {
         dispatch(addToCart({ img, brand, name, price: `${price}$` }));
+        setModal(true);
+        setModalImg(img);
+    };
+
+    const closeModal = () => {
+        setModal(false);
     };
 
     useEffect(() => {
@@ -112,6 +121,7 @@ const Fetch = ({type}) => {
                     }
                 </div>
                 <ScrollUpButton/>
+                {modal ? <Modal closeModal={closeModal} modalImg={modalImg}/> : null}
             </div>
         )
     }

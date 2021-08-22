@@ -33,7 +33,7 @@ const TopBar = () => {
                 </Link>
             </div>
         </div>
-        {mobileMenu ? <MobileMenu toggleMobileMenu={toggleMobileMenu}/> : <></>}
+        {mobileMenu ? <MobileMenu toggleMobileMenu={toggleMobileMenu}/> : null}
         </>
     )
 };
