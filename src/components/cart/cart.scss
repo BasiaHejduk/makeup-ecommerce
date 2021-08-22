@@ -1,0 +1,129 @@
+@import '../../common/constants.scss';
+
+.cart {
+    padding-top: 150px;
+    width: 100%;
+    min-height: 100vh;
+
+    &__list {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__item {
+        width: 80%;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        @media (min-width: $mobile) {
+            grid-template-columns: 1fr 3fr 1fr 1fr;
+            align-items: center;
+        }
+
+    }
+
+    &__item-img-wrapper {
+        width: 80px;
+        height: 80px;
+        border: 1px solid $grey-color;
+        border-radius: 5px;
+        margin-right: 10px;
+        @media (min-width: $mobile) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__item-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__item-info {
+        align-self: center;
+    }
+
+    &__item-brand {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
+        @media (min-width: $mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__item-name {
+        font-size: 12px;
+        font-weight: 300;
+        @media (min-width: $mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__item-price {
+        justify-self: center;
+        align-self: center;
+        font-size: 14px;
+        font-weight: 500;
+        @media (min-width: $mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__button-remove {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        justify-self: flex-end;
+        align-self: center;
+        background-color: $main-color;
+        border: 1px solid $border-color;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        @media (min-width: $mobile) {
+            font-size: 18px;
+        }
+        &:hover {
+            box-shadow: 5px 5px 14px 0px rgba(143, 112, 112, 1);
+        }
+    }
+
+    &__buttons-wrapper {
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $mobile) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        background-color: $main-color;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        @media (min-width: $mobile) {
+            font-size: 18px;
+            width: 250px;
+        }
+        &:hover {
+            box-shadow: 5px 5px 14px 0px rgba(143, 112, 112, 1);
+        }
+
+        &--shop {
+            background-color: $white-color;
+            color: $main-color;
+        }
+    }
+}

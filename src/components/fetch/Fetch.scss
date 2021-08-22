@@ -31,12 +31,14 @@
     }
 
     &__link {
+        height: 90%;
         text-decoration: none;
         color: black;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 
     &__item {
@@ -44,7 +46,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         border: 1px solid $grey-color;
         border-radius: 10px;
@@ -71,6 +73,7 @@
         cursor: pointer;
         &:hover {
             transform: scale(1.2);
+            box-shadow: 5px 5px 14px 0px rgba(143, 112, 112, 1);
         }
     }
 

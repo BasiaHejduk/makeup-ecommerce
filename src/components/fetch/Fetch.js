@@ -1,15 +1,23 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { API_URL } from '../../common/helpers';
 import {brands} from '../../common/Brands';
 import ScrollUpButton from '../scroll-up-button/ScrollUpButton';
 import Loader from '../loader/Loader';
+import { addToCart } from '../../store';
 import './Fetch.scss';
+
 
 const Fetch = ({type}) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [brand, setBrand] = useState("");
+    const dispatch = useDispatch();
+
+    const handleAddProduct = (img, brand, name, price) => {
+        dispatch(addToCart({ img, brand, name, price: `${price}$` }));
+    };
 
     useEffect(() => {
 
@@ -85,18 +93,20 @@ const Fetch = ({type}) => {
                     {
                         products.map((product) => {
                             return (
-                                    <Link to={`/product/${product.id}`} className="fetch__link" key={product.id}>
-                                        <div className="fetch__item">
-                                            <button className="fetch__cart-button"></button>
-                                            <div className="fetch__img-wrapper">
-                                                <img className="fetch__img" src={product.image_link} alt=""></img>
-                                            </div>
-                                            <p className="fetch__brand">Brand: {product.brand}</p>
-                                            <p className="fetch__name">{product.name}</p>
-                                            <p className="fetch__price">{product.price} {product.price_sign}</p>
+                                        <div className="fetch__item" key={product.id}>
+                                            <button 
+                                                className="fetch__cart-button" 
+                                                onClick={()=> handleAddProduct(product.image_link, product.brand, product.name, product.price)}>
+                                            </button>
+                                            <Link to={`/product/${product.id}`} className="fetch__link">
+                                                <div className="fetch__img-wrapper">
+                                                    <img className="fetch__img" src={product.image_link} alt=""></img>
+                                                </div>
+                                                <p className="fetch__brand">Brand: {product.brand}</p>
+                                                <p className="fetch__name">{product.name}</p>
+                                                <p className="fetch__price">{product.price} {product.price_sign}</p>
+                                            </Link>
                                         </div>
-                                    </Link>
-
                             )
                         })
                     }
