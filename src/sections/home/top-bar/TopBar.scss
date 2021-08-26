@@ -48,35 +48,13 @@
         background-size: cover;
         height: 35px;
         width: 35px;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-around;
         @media (min-width: $mobile) {
             display: none;
         }
-    }
-
-    &__cross {
-        background-image: url(../../../assets/x.svg);
-        background-size: cover;
-        height: 35px;
-        width: 35px;
-        @media (min-width: $mobile) {
-            display: none;
+        &--cross {
+            background-image: url(../../../assets/x.svg);
         }
     }
-
-    // &__hamburger-item {
-    //     width: 35px;
-    //     height: 2px;
-    //     background-color: black;
-    //     &--cross1 {
-    //         // transform: rotate(45deg);
-    //     }
-    //     &--cross2 {
-    //         transform: rotate(-45deg);
-    //     }
-    // }
 
     &__login {
         width: 40px;
