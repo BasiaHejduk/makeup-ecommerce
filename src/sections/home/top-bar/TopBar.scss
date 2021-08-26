@@ -44,21 +44,39 @@
     }
 
     &__hamburger {
-        height: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        background-image: url(../../../assets/menu.svg);
+        background-size: cover;
+        height: 35px;
+        width: 35px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-around;
         @media (min-width: $mobile) {
             display: none;
         }
-
     }
 
-    &__hamburger-item {
+    &__cross {
+        background-image: url(../../../assets/x.svg);
+        background-size: cover;
+        height: 35px;
         width: 35px;
-        height: 2px;
-        background-color: black;
+        @media (min-width: $mobile) {
+            display: none;
+        }
     }
+
+    // &__hamburger-item {
+    //     width: 35px;
+    //     height: 2px;
+    //     background-color: black;
+    //     &--cross1 {
+    //         // transform: rotate(45deg);
+    //     }
+    //     &--cross2 {
+    //         transform: rotate(-45deg);
+    //     }
+    // }
 
     &__login {
         width: 40px;

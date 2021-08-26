@@ -20,11 +20,17 @@ const TopBar = () => {
                 <Link to="/" className="top-bar__logo-text"><p className="top-bar__logo-text">YOUR <br/> MAKEUP</p></Link>
             </div>
             <div className="top-bar__right">
-                <div className="top-bar__hamburger" onClick={toggleMobileMenu}>
-                    <div className="top-bar__hamburger-item"></div>
-                    <div className="top-bar__hamburger-item"></div>
-                    <div className="top-bar__hamburger-item"></div>
-                </div>
+                {mobileMenu ? 
+                    <div className="top-bar__cross" onClick={toggleMobileMenu}>
+                        {/* <div className="top-bar__hamburger-item top-bar__hamburger-item--cross1"></div>
+                        <div className="top-bar__hamburger-item top-bar__hamburger-item--cross2"></div> */}
+                    </div> :
+                    <div className="top-bar__hamburger" onClick={toggleMobileMenu}>
+                        {/* <div className="top-bar__hamburger-item"></div>
+                        <div className="top-bar__hamburger-item"></div>
+                        <div className="top-bar__hamburger-item"></div> */}
+                    </div>
+                }
                 {/* <div className="top-bar__login"></div> */}
                 <Link to="/cart" className="top-bar__link">
                     <div className="top-bar__cart-icon">
