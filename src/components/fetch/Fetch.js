@@ -113,7 +113,7 @@ const Fetch = ({type}) => {
                                                 </div>
                                                 <p className="fetch__brand">Brand: {product.brand}</p>
                                                 <p className="fetch__name">{product.name}</p>
-                                                <p className="fetch__price">{product.price} {product.price_sign}</p>
+                                                <p className="fetch__price">{product.price} $</p>
                                             </Link>
                                         </div>
                             )
