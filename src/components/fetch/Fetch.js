@@ -18,8 +18,8 @@ const Fetch = ({type}) => {
     const [modalImg, setModalImg] = useState("");
     const dispatch = useDispatch();
 
-    const handleAddProduct = (img, brand, name, price) => {
-        dispatch(addToCart({ img, brand, name, price: `${price}$` }));
+    const handleAddProduct = (id, img, brand, name, price) => {
+        dispatch(addToCart({ id, img, brand, name, price}));
         setModal(true);
         setModalImg(img);
     };
@@ -105,7 +105,7 @@ const Fetch = ({type}) => {
                                         <div className="fetch__item" key={product.id}>
                                             <button 
                                                 className="fetch__cart-button" 
-                                                onClick={()=> handleAddProduct(product.image_link, product.brand, product.name, product.price)}>
+                                                onClick={()=> handleAddProduct(product.id, product.image_link, product.brand, product.name, product.price)}>
                                             </button>
                                             <Link to={`/product/${product.id}`} className="fetch__link">
                                                 <div className="fetch__img-wrapper">

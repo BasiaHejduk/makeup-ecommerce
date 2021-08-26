@@ -23,6 +23,10 @@
             align-items: center;
         }
 
+        &--summary {
+            margin: 20px 0;
+        }
+
     }
 
     &__item-img-wrapper {
@@ -89,6 +93,27 @@
         }
         &:hover {
             box-shadow: 5px 5px 14px 0px rgba(143, 112, 112, 1);
+        }
+    }
+
+    &__value-info {
+        grid-column: 1/4;
+        text-align: end;
+        font-size: 14px;
+        font-weight: 500;
+        @media (min-width: $mobile) {
+            font-size: 20px;
+        }
+    }
+
+    &__value-sum {
+        padding: 0 10px;
+        grid-column: 4/5;
+        text-align: end;
+        font-size: 14px;
+        font-weight: 500;
+        @media (min-width: $mobile) {
+            font-size: 20px;
         }
     }
 

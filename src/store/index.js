@@ -5,7 +5,7 @@ export const addToCart = (payload) => {
     return {
         type: "cart/add",
         payload: {
-            id: uuid(),
+            key: uuid(),
             ...payload,
         }
 
@@ -16,7 +16,7 @@ export const removeFromCart = (payload) => {
     return {
         type: "cart/remove",
         payload: {
-            id: uuid(),
+            key: uuid(),
             ...payload,
         }
     }
@@ -36,7 +36,7 @@ const cartReducer = (state = initialState, action) => {
         case "cart/remove":
             return {
                 ...state, 
-                cart: state.cart.filter((product) => product.id !== action.payload.id)
+                cart: state.cart.filter((product) => product.key !== action.payload.key)
             };
         default:
             return state;
